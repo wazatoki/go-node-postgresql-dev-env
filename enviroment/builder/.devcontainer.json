@@ -1,0 +1,14 @@
+{
+	"name": "Dev Container builder env",
+	"dockerComposeFile": "../docker-compose.yml",
+	"service": "[[project_name]]_builder",
+	"workspaceFolder": "/workspace/builder/work",
+	"shutdownAction": "stopCompose",
+	
+	"settings": { 
+		"terminal.integrated.shell.linux": "/bin/bash"
+	},
+
+	"extensions": []
+
+}

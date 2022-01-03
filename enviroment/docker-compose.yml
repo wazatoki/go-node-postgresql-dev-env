@@ -1,0 +1,41 @@
+version: '3'
+
+services: 
+  [[project_name]]_builder:
+    container_name: "[[project_name]]_builder"
+    build: 
+      dockerfile: "Dockerfile"
+      context: "builder"
+    volumes: 
+      - ".:/workspace:cached"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    tty: true
+  [[project_name]]_go:
+    build:
+      dockerfile: "Dockerfile"
+      context: "go"
+    container_name: [[project_name]]_go
+    volumes:
+      - ".:/workspace:cached"
+    tty: true
+    ports: 
+      - "8080:8080"
+    depends_on: 
+      - [[project_name]]_db
+  [[project_name]]_node:
+    build:
+      dockerfile: "Dockerfile"
+      context: "node"
+    container_name: [[project_name]]_node
+    volumes:
+      - ".:/workspace:cached"
+    tty: true
+    ports: 
+      - "4200:4200"
+  [[project_name]]_db:
+    image: postgres:11.3
+    container_name: [[project_name]]_db
+    environment: 
+      POSTGRES_USER: "[[project_name]]"
+      POSTGRES_PASSWORD: "[[project_name]]"
+      POSTGRES_DB: "[[project_name]]db"
