@@ -1,7 +1,7 @@
 {
 	"name": "Dev Container node env",
 	"dockerComposeFile": "../docker-compose.yml",
-	"service": "[[project_name]]_node",
+	"service": "__project_name___node",
 	"workspaceFolder": "/workspace/node/work",
 	"shutdownAction": "stopCompose",
 	
