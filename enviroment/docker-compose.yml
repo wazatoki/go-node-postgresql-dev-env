@@ -1,8 +1,8 @@
 version: '3'
 
 services: 
-  __project_name___builder:
-    container_name: "__project_name___builder"
+  tmp_project_name_builder:
+    container_name: "tmp_project_name_builder"
     build: 
       dockerfile: "Dockerfile"
       context: "builder"
@@ -10,32 +10,32 @@ services:
       - ".:/workspace:cached"
       - "/var/run/docker.sock:/var/run/docker.sock"
     tty: true
-  __project_name___go:
+  tmp_project_name_go:
     build:
       dockerfile: "Dockerfile"
       context: "go"
-    container_name: __project_name___go
+    container_name: tmp_project_name_go
     volumes:
       - ".:/workspace:cached"
     tty: true
     ports: 
       - "8080:8080"
     depends_on: 
-      - __project_name___db
-  __project_name___node:
+      - tmp_project_name_db
+  tmp_project_name_node:
     build:
       dockerfile: "Dockerfile"
       context: "node"
-    container_name: __project_name___node
+    container_name: tmp_project_name_node
     volumes:
       - ".:/workspace:cached"
     tty: true
     ports: 
       - "4200:4200"
-  __project_name___db:
+  tmp_project_name_db:
     image: postgres:11.3
-    container_name: __project_name___db
+    container_name: tmp_project_name_db
     environment: 
-      POSTGRES_USER: "__project_name__"
-      POSTGRES_PASSWORD: "__project_name__"
-      POSTGRES_DB: "__project_name__db"
+      POSTGRES_USER: "tmp_project_name"
+      POSTGRES_PASSWORD: "tmp_project_name"
+      POSTGRES_DB: "tmp_project_namedb"

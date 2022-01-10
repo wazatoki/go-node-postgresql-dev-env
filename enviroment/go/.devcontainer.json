@@ -1,7 +1,7 @@
 {
 	"name": "Dev Container go env",
 	"dockerComposeFile": "../docker-compose.yml",
-	"service": "__project_name___go",
+	"service": "tmp_project_name_go",
 	"workspaceFolder": "/workspace/go/work",
 	"shutdownAction": "stopCompose",
 	
