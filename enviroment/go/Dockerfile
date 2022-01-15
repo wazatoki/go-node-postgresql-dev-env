@@ -1,6 +1,10 @@
 FROM golang:1.17.5-alpine3.14
 
-RUN apk add --update make
+RUN apk add --update make git && \
+    mkdir /mnt/workspace && \
+    mkdir /workspace
+
+COPY work/.??* /workspace/
 
 WORKDIR /tmp
 

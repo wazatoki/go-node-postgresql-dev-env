@@ -3,9 +3,14 @@ FROM node:17.3.0-alpine3.14
 RUN apk add --update \
             udev \
             ttf-freefont \
-            chromium
+            chromium \
+            git
 
-RUN mkdir /noto
+RUN mkdir /mnt/workspace && \
+    mkdir /workspace && \
+    mkdir /noto
+
+COPY work/frontend /workspace/
 
 ADD https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip /noto 
 
@@ -21,6 +26,8 @@ WORKDIR /
 RUN rm -rf /noto
 
 RUN npm install -g @angular/cli
+
+ENV CHROME_BIN="/usr/bin/chromium-browser"
 
 WORKDIR /workspace
 
