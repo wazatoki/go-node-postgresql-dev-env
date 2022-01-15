@@ -2,7 +2,7 @@
 	"name": "Dev Container node env",
 	"dockerComposeFile": "../docker-compose.yml",
 	"service": "tmp_project_name_node",
-	"workspaceFolder": "/workspace/node/work",
+	"workspaceFolder": "/workspace",
 	"shutdownAction": "none",
 	
 	"settings": { 
