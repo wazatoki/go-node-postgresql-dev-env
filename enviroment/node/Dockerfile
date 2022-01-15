@@ -10,7 +10,7 @@ RUN mkdir /mnt/workspace && \
     mkdir /workspace && \
     mkdir /noto
 
-COPY work/frontend /workspace/
+COPY work/frontend /workspace
 
 ADD https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip /noto 
 

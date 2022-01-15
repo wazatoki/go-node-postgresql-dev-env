@@ -4,7 +4,7 @@ RUN apk add --update make git && \
     mkdir /mnt/workspace && \
     mkdir /workspace
 
-COPY work/ /workspace/
+COPY work /workspace
 
 WORKDIR /tmp
 
