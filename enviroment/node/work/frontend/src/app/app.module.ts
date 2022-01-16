@@ -8,10 +8,12 @@ import { HttpErrorInterceptor } from './services/helper/http-error-interceptor';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LayoutModule } from './layout/layout.module';
 import { MatMenuModule } from '@angular/material/menu';
+import { WelcomComponent } from './welcom/welcom.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    WelcomComponent,
   ],
   imports: [
     BrowserModule,
