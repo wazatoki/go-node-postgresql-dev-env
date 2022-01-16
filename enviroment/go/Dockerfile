@@ -1,6 +1,6 @@
 FROM golang:1.17.5-alpine3.14
 
-RUN apk add --update make git && \
+RUN apk add --update alpine-sdk make git && \
     mkdir /mnt/workspace && \
     mkdir /workspace
 
