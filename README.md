@@ -1,9 +1,9 @@
 # go-node-postgresql-dev-env
 
-## __project_name__を修正する。
+## tmp_project_nameを修正する。
 
 ```
-find . -type f -print0 | xargs -0 sed -i -e "s/__project_name__/test_sample/" 
+find . -type f -print0 | xargs -0 sed -i -e "s/tmp_project_name/test_sample/" 
 ```
 
 ## go プロジェクトの初期化
@@ -11,7 +11,7 @@ find . -type f -print0 | xargs -0 sed -i -e "s/__project_name__/test_sample/"
 ```
 mkdir project_dir
 cd project_dir
-go mod init
+go mod tidy
 
 ```
 
