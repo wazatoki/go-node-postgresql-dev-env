@@ -15,9 +15,9 @@ build: clean
 	mkdir build && \
 	cd tmp_project_name && \
 	export GOOS=linux && \
-	go build -o ../build/mimosa_linux_amd64.bin . && \
+	go build -a -tags netgo -installsuffix netgo -o ../build/mimosa_linux_amd64.bin . && \
 	export GOOS=windows && \
-	go build -o ../build/mimosa_windows_amd64.exe . && \
+	go build -a -tags netgo -installsuffix netgo -o ../build/mimosa_windows_amd64.exe . && \
 	cd $(ROOT_DIR) && \
 	cp -r resources build/
 
