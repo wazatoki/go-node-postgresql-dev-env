@@ -8,6 +8,8 @@ services:
       context: "builder"
     volumes: 
       - ".:/mnt/workspace:cached"
+      - "golang_workspace:/workspace/golang"
+      - "node_workspace:/workspace/node"
       - "/var/run/docker.sock:/var/run/docker.sock"
     tty: true
   tmp_project_name_go:
@@ -17,6 +19,7 @@ services:
     container_name: tmp_project_name_go
     volumes:
       - ".:/mnt/workspace:cached"
+      - "golang_workspace:/workspace"
       - "/var/run/docker.sock:/var/run/docker.sock"
     tty: true
     ports: 
@@ -30,6 +33,7 @@ services:
     container_name: tmp_project_name_node
     volumes:
       - ".:/mnt/workspace:cached"
+      - "node_workspace:/workspace"
       - "/var/run/docker.sock:/var/run/docker.sock"
     tty: true
     ports: 
@@ -41,3 +45,8 @@ services:
       POSTGRES_USER: "tmp_project_name"
       POSTGRES_PASSWORD: "tmp_project_name"
       POSTGRES_DB: "tmp_project_namedb"
+
+volumes:
+  node_workspace:
+  golang_workspace:
+
