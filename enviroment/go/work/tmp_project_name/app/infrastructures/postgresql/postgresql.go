@@ -79,10 +79,10 @@ func Migrate() {
 		"file://./resources/migrations",
 		"postgres://"+dataSourceName)
 
-	m.Up()
 	if err != nil {
 		fmt.Println(err)
 	}
+	m.Up()
 }
 
 // NewPostgresql コンストラクタ
