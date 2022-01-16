@@ -6,7 +6,7 @@ import (
 
 	"github.com/golang-migrate/migrate/v4"
 	_ "github.com/golang-migrate/migrate/v4/database/postgres"
-	_ "github.com/golang-migrate/migrate/v4/source/github"
+	_ "github.com/golang-migrate/migrate/v4/source/file"
 
 	"github.com/jmoiron/sqlx"
 	//sqldriver import
@@ -76,7 +76,7 @@ func Migrate() {
 		"?sslmode=disable"
 
 	m, err := migrate.New(
-		"file//./resources/migrations",
+		"file://./resources/migrations",
 		"postgres://"+dataSourceName)
 
 	m.Up()
