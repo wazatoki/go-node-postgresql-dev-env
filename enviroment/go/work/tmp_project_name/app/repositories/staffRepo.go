@@ -17,13 +17,14 @@ func (s *StaffRepo) SelectByAccountID(id string) (staff *domain.Staff, err error
 
 		queryStr := "select * " +
 			"from staff s " +
-			"where s.del != true and s.account_id = ?"
+			"where s.del != true and s.account_id = ?" +
+			"limit 1"
 
 		// クエリをDBドライバに併せて再構築
 		queryStr = db.Rebind(queryStr)
 
 		// データ取得処理
-		db.Select(&staff, queryStr, id)
+		db.Get(&staff, queryStr, id)
 
 		return err
 	})
