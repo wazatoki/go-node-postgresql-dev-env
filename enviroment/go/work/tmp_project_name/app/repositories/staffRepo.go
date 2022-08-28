@@ -24,7 +24,7 @@ func (s *StaffRepo) SelectByAccountID(id string) (staff *domain.Staff, err error
 		queryStr = db.Rebind(queryStr)
 
 		// データ取得処理
-		db.Get(&staff, queryStr, id)
+		err = db.Get(&staff, queryStr, id)
 
 		return err
 	})
