@@ -4,13 +4,14 @@ RUN apk add --update \
             udev \
             ttf-freefont \
             chromium \
-            git
+            git \
+            openssh
 
 RUN mkdir /mnt/workspace && \
     mkdir /workspace && \
     mkdir /noto
 
-COPY work/frontend /workspace
+COPY ../work /mnt/workspace
 
 ADD https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip /noto 
 
