@@ -3,7 +3,7 @@
 ## tmp_project_nameを修正する。
 
 ```
-find . -type f -print0 | xargs -0 sed -i -e "s/tmp_project_name/test_sample/" 
+find . -type f -print0 | xargs -0 sed -i -e "s/tmp_project_name/test_sample/g" 
 ```
 
 ## go プロジェクトの初期化
