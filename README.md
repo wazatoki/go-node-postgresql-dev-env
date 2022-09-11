@@ -6,6 +6,8 @@
 find . -type f -print0 | xargs -0 sed -i -e "s/tmp_project_name/test_sample/g" 
 ```
 
+## go-node-postgresql-dev-env/enviroment/work/tmp_project_name/をリネームする
+
 ## go プロジェクトの初期化
 
 ```
